@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Vibe Coding</title>
+  <meta name="description" content="Website portfolio pribadi dibuat dengan Vibe Coding Workshop." />
+
+  <!-- Google Fonts: Nunito (rounded, cocok untuk claymorphism) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome untuk icon menu -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS utama kita -->
+  <link rel="stylesheet" href="asset/css/style.css" />
+</head>
+
+<body>
+
+  <!-- =============================================
+       SIDEBAR NAVIGASI
+       Sidebar tetap di kiri layar (fixed position)
+       ============================================= -->
+  <aside class="sidebar" id="sidebar">
+
+
+    <!-- Daftar menu navigasi -->
+    <nav class="sidebar-nav" aria-label="Navigasi Utama">
+      <ul class="nav-list">
+
+        <!-- Menu: Home -->
+        <li class="nav-item">
+          <a href="#home" class="nav-link active" id="nav-home">
+            <i class="fa-solid fa-house nav-icon"></i>
+            <span class="nav-label">Home</span>
+          </a>
+        </li>
+
+        <!-- Menu: About -->
+        <li class="nav-item">
+          <a href="#about" class="nav-link" id="nav-about">
+            <i class="fa-solid fa-user nav-icon"></i>
+            <span class="nav-label">About</span>
+          </a>
+        </li>
+
+        <!-- Menu: Project -->
+        <li class="nav-item">
+          <a href="#project" class="nav-link" id="nav-project">
+            <i class="fa-solid fa-folder nav-icon"></i>
+            <span class="nav-label">Project</span>
+          </a>
+        </li>
+
+        <!-- Menu: Contact -->
+        <li class="nav-item">
+          <a href="#contact" class="nav-link" id="nav-contact">
+            <i class="fa-solid fa-share-nodes nav-icon"></i>
+            <span class="nav-label">Contact</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </aside>
+  <!-- /SIDEBAR -->
+
+
+  <!-- =============================================
+       BOTTOM NAVIGATION (MOBILE ONLY)
+       Floating pill navigation di bawah untuk mobile.
+       Disembunyikan di desktop & tablet via CSS.
+       ============================================= -->
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Navigasi Mobile">
+    <ul class="bottom-nav__list">
+
+      <li class="bottom-nav__item">
+        <a href="#home" class="bottom-nav__link active" id="bnav-home">
+          <i class="fa-solid fa-house bottom-nav__icon"></i>
+          <span class="bottom-nav__label">Home</span>
+        </a>
+      </li>
+
+      <li class="bottom-nav__item">
+        <a href="#about" class="bottom-nav__link" id="bnav-about">
+          <i class="fa-solid fa-user bottom-nav__icon"></i>
+          <span class="bottom-nav__label">About</span>
+        </a>
+      </li>
+
+      <li class="bottom-nav__item">
+        <a href="#project" class="bottom-nav__link" id="bnav-project">
+          <i class="fa-solid fa-folder bottom-nav__icon"></i>
+          <span class="bottom-nav__label">Projects</span>
+        </a>
+      </li>
+
+      <li class="bottom-nav__item">
+        <a href="#contact" class="bottom-nav__link" id="bnav-contact">
+          <i class="fa-solid fa-share-nodes bottom-nav__icon"></i>
+          <span class="bottom-nav__label">Contact</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+  <!-- /BOTTOM NAVIGATION -->
+
+
+  <!-- =============================================
+       KONTEN UTAMA
+       Bagian ini berada di sebelah kanan sidebar
+       ============================================= -->
+  <main class="main-content">
+
+    <!-- =============================================
+         SECTION: HOME
+         Terdiri dari 3 lapisan (layer):
+         1. .home-bg       → dekorasi / background
+         2. .home-character → gambar karakter
+         3. .home-text     → nama dan tagline
+         ============================================= -->
+    <section id="home" class="home-section">
+
+      <!-- LAYER 1: Dekorasi Background
+           Lingkaran-lingkaran pastel sebagai elemen dekoratif.
+           Posisinya absolute, tidak mempengaruhi layout.
+           aria-hidden="true" agar screen reader mengabaikannya. -->
+      <div class="home-bg" aria-hidden="true">
+        <div class="deco-circle deco-circle--1"></div>
+        <div class="deco-circle deco-circle--2"></div>
+        <div class="deco-circle deco-circle--3"></div>
+        <div class="deco-blob deco-blob--1"></div>
+        <div class="deco-blob deco-blob--2"></div>
+      </div>
+
+      <!-- LAYER 3 (z-index tertinggi): Teks Nama
+           Dirender di atas karakter agar selalu terbaca.
+           Animasi "floating" diterapkan via CSS @keyframes. -->
+      <div class="home-text">
+        <!-- Tagline kecil di atas nama -->
+        <p class="home-tagline">✦ Vibe Coding Portfolio ✦</p>
+
+        <!-- Nama utama — animasi float sangat subtle -->
+        <h1 class="home-name">
+          <span class="home-name__first">Jessie Clarence</span>
+        </h1>
+
+        <!-- Deskripsi singkat -->
+        <p class="home-subtitle">Designer &amp; Developer</p>
+      </div>
+
+      <!-- LAYER 2: Karakter Utama
+           Gambar karakter duduk/berdiri di bagian bawah tengah.
+           object-fit: contain → tidak di-stretch, proporsi tetap.
+           Posisi absolute bottom-0 agar selalu menyentuh "lantai". -->
+      <div class="home-character">
+        <img src="asset/image/char-center.png" alt="Karakter utama Calandra Alencia Haryani" class="character-img" />
+      </div>
+
+    </section>
+    <!-- /SECTION HOME -->
+
+    <!-- Section: About -->
+    <section id="about" class="about-section">
+
+      <!-- ── Informasi (full-width column, left-aligned) ── -->
+      <div class="about-info">
+
+        <!-- Heading -->
+        <div class="about-header">
+          <p class="about-eyebrow">About</p>
+          <h2 class="about-heading">
+            <span id="about-typing-text"></span><span class="about-cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="about-intro">
+            I'm an observant graphic designer who enjoys turning ideas into clear,
+            thoughtful, and purposeful visuals.
+          </p>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="about-block">
+          <h3 class="about-block__label">Experience</h3>
+          <ul class="about-block__list">
+            <li>Graphic Design &amp; Visual Communication Design</li>
+            <li>Branding, Editorial &amp; Packaging Design</li>
+            <li>UI/UX &amp; Web Design</li>
+          </ul>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="about-block">
+          <h3 class="about-block__label">Education</h3>
+          <ul class="about-block__list">
+            <li>S1 Desain Komunikasi Visual — Universitas Pelita Harapan</li>
+          </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="about-block">
+          <h3 class="about-block__label">Contact</h3>
+          <ul class="about-block__list">
+            <li>
+              <span class="about-block__key">Email</span>
+              <a href="mailto:jessieclarence.19@gmail.com" class="about-link">jessieclarence.19@gmail.com</a>
+            </li>
+            <li>
+              <span class="about-block__key">Instagram</span>
+              <a href="https://instagram.com/jessieclarencee" target="_blank" rel="noopener"
+                class="about-link">@jessieclarencee</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="about-block">
+          <h3 class="about-block__label">Tools</h3>
+          <ul class="about-tools">
+            <li class="about-tool-tag">Photoshop</li>
+            <li class="about-tool-tag">Illustrator</li>
+            <li class="about-tool-tag">InDesign</li>
+            <li class="about-tool-tag">Procreate</li>
+            <li class="about-tool-tag">Canva</li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /about-info -->
+
+      <!-- ── Lanyard: absolutely positioned on right, overlaps content ── -->
+      <div class="about-lanyard">
+        <img src="asset/image/lanyard.png" alt="Lanyard Jessie Clarence" class="lanyard-img" draggable="false" />
+      </div>
+
+    </section>
+
+
+
+    <!-- Section: Project -->
+    <section id="project" class="project-section">
+      <!-- Section Heading with horizontal divider lines -->
+      <div class="project-header">
+        <span class="project-header__line" aria-hidden="true"></span>
+        <h2 class="project-heading">PROJECTS</h2>
+        <span class="project-header__line" aria-hidden="true"></span>
+      </div>
+
+      <!-- Project Carousel Container -->
+      <div class="project-carousel-container">
+        <!-- Previous Button (Desktop) -->
+        <button id="project-prev-btn" class="project-nav-btn project-nav-btn--prev" aria-label="Previous Project"
+          disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Slider Viewport -->
+        <div class="project-slider-wrapper">
+          <div id="project-slider" class="project-slider">
+
+            <!-- Card 01 -->
+            <article class="project-card">
+              <span class="project-card__number">01</span>
+              <div class="project-card__image-container">
+                <div class="project-card__placeholder-icon" aria-hidden="true">
+                  <!-- Phone SVG matching reference -->
+                  <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Project 1</h3>
+                <p class="project-card__category">UI/UX &amp; Mobile Design</p>
+              </div>
+            </article>
+
+            <!-- Card 02 -->
+            <article class="project-card">
+              <span class="project-card__number">02</span>
+              <div class="project-card__image-container">
+                <div class="project-card__placeholder-icon" aria-hidden="true">
+                  <!-- Tablet SVG matching reference -->
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="3" ry="3"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Project 2</h3>
+                <p class="project-card__category">Brand Identity</p>
+              </div>
+            </article>
+
+            <!-- Card 03 -->
+            <article class="project-card">
+              <span class="project-card__number">03</span>
+              <div class="project-card__image-container">
+                <div class="project-card__placeholder-icon" aria-hidden="true">
+                  <!-- Laptop SVG matching reference -->
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55A1 1 0 0 1 20.38 20H3.62a1 1 0 0 1-.9-1.45L4 16">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Project 3</h3>
+                <p class="project-card__category">Web Application</p>
+              </div>
+            </article>
+
+            <!-- Card 04 -->
+            <article class="project-card">
+              <span class="project-card__number">04</span>
+              <div class="project-card__image-container">
+                <div class="project-card__placeholder-icon" aria-hidden="true">
+                  <!-- Desktop Monitor SVG -->
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Project 4</h3>
+                <p class="project-card__category">Editorial &amp; Packaging</p>
+              </div>
+            </article>
+
+            <!-- Card 05 -->
+            <article class="project-card">
+              <span class="project-card__number">05</span>
+              <div class="project-card__image-container">
+                <div class="project-card__placeholder-icon" aria-hidden="true">
+                  <!-- Layout / Visual Communication SVG -->
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Project 5</h3>
+                <p class="project-card__category">Visual Communication</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Next Button (Desktop) -->
+        <button id="project-next-btn" class="project-nav-btn project-nav-btn--next" aria-label="Next Project">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Controls -->
+      <div class="project-mobile-controls" aria-label="Slider navigation">
+        <button id="project-mobile-prev" class="project-nav-btn project-nav-btn--mobile" aria-label="Previous Project"
+          disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="project-indicators" id="project-indicators">
+          <button class="project-dot active" aria-label="Go to project 1"></button>
+          <button class="project-dot" aria-label="Go to project 2"></button>
+          <button class="project-dot" aria-label="Go to project 3"></button>
+          <button class="project-dot" aria-label="Go to project 4"></button>
+          <button class="project-dot" aria-label="Go to project 5"></button>
+        </div>
+        <button id="project-mobile-next" class="project-nav-btn project-nav-btn--mobile" aria-label="Next Project">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section id="contact" class="contact-section">
+      <!-- Section Heading with horizontal divider lines -->
+      <div class="contact-header">
+        <span class="contact-header__line" aria-hidden="true"></span>
+        <h2 class="contact-heading">CONTACT</h2>
+        <span class="contact-header__line" aria-hidden="true"></span>
+      </div>
+
+      <!-- Envelope CTA Container -->
+      <div class="contact-envelope-container">
+        <div class="envelope" id="contact-envelope" tabindex="0" role="region"
+          aria-label="Interactive Contact Envelope">
+
+          <!-- 1. Back of Envelope (Base) -->
+          <div class="envelope__back"></div>
+
+          <!-- 2. Letter (Inside Envelope) -->
+          <article class="envelope__letter" id="contact-letter">
+            <h3 class="envelope__letter-title">Let's Work Together!</h3>
+            <p class="envelope__letter-text">
+              Have a project in mind, need a developer, or just want to discuss some cool ideas? I'm always open to new
+              opportunities.
+            </p>
+            <a href="mailto:jessieclarence.19@gmail.com" class="envelope__btn" id="contact-email-btn">
+              Send Me an Email
+            </a>
+          </article>
+
+          <!-- 3. Front Pocket of Envelope (Clipped flap in front of letter) -->
+          <div class="envelope__pocket" aria-hidden="true"></div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- /KONTEN UTAMA -->
+
+
+  <!-- =============================================
+       PROJECT PREVIEW MODAL
+       Modal overlay untuk memperbesar preview project
+       ============================================= -->
+  <div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-label="Project Preview">
+    <div class="project-modal__overlay" id="project-modal-overlay"></div>
+    <div class="project-modal__wrapper">
+      <button class="project-modal__close" id="project-modal-close" aria-label="Close modal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="project-modal__content" id="project-modal-content">
+        <!-- Konten gambar / preview diinjeksikan secara dinamis via JS -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       FLOATING WHATSAPP BUTTON
+       Shortcut WhatsApp mengambang di kanan bawah
+       ============================================= -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn"
+    aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+  </a>
+
+
+  <!-- JavaScript (interaksi, carousel, modal, eye tracking, lanyard) -->
+  <script src="asset/js/script.js"></script>
+</body>
+
+</html>
